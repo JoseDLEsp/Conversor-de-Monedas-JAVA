@@ -13,7 +13,7 @@ public class Temperatura extends Conversor {
 	}
 
 	@Override
-	public double convertirValores(double C, String tipo1, String tipo2) {
+	public double convertirValores(double C,String tipo1, String tipo2, int index1, int index2) {
 		switch (tipo1) {
 		case "Celsius":
 			switch (tipo2) {

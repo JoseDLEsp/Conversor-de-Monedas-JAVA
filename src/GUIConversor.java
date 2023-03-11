@@ -40,6 +40,7 @@ public class GUIConversor extends JFrame {
 	 * Create the frame.
 	 */
 	public GUIConversor(Conversor conversor) {
+		setTitle("JAVA Conversor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -48,11 +49,11 @@ public class GUIConversor extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JLabel lblNewLabel = new JLabel("Realice la conversión:");
+		JLabel lblNewLabel = new JLabel("Perform conversion:");
 		lblNewLabel.setBounds(48, 46, 142, 29);
 		contentPane.add(lblNewLabel);
 
-		JButton btnNewButton = new JButton("Regresar");
+		JButton btnNewButton = new JButton("Go Back");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				GUIMainMenu menu = new GUIMainMenu();
@@ -87,13 +88,14 @@ public class GUIConversor extends JFrame {
 		
 	
 		
-		JButton btnNewButton_2 = new JButton("Convertir");
+		JButton btnNewButton_2 = new JButton("Convert");
 		btnNewButton_2.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 					String enteredValue = textField.getText();
 					try {
 						double value = Double.parseDouble(enteredValue);
-						double resultado = conversor.convertirValores(value, (String)comboBox.getSelectedItem(), (String)comboBox_1.getSelectedItem());
+						double resultado = conversor.convertirValores(value, (String)comboBox.getSelectedItem(), 
+								(String)comboBox_1.getSelectedItem(), comboBox.getSelectedIndex(), comboBox_1.getSelectedIndex());
 						textField_1.setForeground(new Color(0, 0, 0));
 						textField_1.setText(Double.toString(resultado));
 					}catch(NumberFormatException nf) {

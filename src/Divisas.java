@@ -14,7 +14,7 @@ public class Divisas extends Conversor {
 	
 	
 	public String[] getListaOpciones() {
-		return getArrays("abrev");
+		return getArrays("nombres");
 	}
 	
 	
@@ -23,10 +23,14 @@ public class Divisas extends Conversor {
 	}
 
 	@Override
-	public double convertirValores(double valor, String tipo1, String tipo2) {
+	public double convertirValores(double valor,String tipo1, String tipo2, int index1, int index2) {
 		System.out.println("Convirtiendo valores");
+		String [] listaAbrev = getArrays("abrev");
+		String moneda = listaAbrev[index1];
+		String cambio = listaAbrev[index2];
+		
 		try {
-			return new DivisasAPIHandler().valorFinal(tipo1, tipo2, valor);
+			return new DivisasAPIHandler().valorFinal(moneda, cambio, valor);
 		}catch(IOException ioe) {
 			System.out.println(ioe.getMessage());
 			System.out.println("Algo salio mal");

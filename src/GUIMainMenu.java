@@ -8,6 +8,7 @@ import javax.swing.JComboBox;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.DefaultComboBoxModel;
 
 public class GUIMainMenu extends JFrame {
 	private String[] opcionesConvertidor = {"Divisas","Temperatura","Tiempo"};
@@ -34,6 +35,7 @@ public class GUIMainMenu extends JFrame {
 	 * Create the frame.
 	 */
 	public GUIMainMenu() {
+		setTitle("JAVA Conversor");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -42,17 +44,18 @@ public class GUIMainMenu extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		JLabel lblNewLabel = new JLabel("Seleccione el tipo de conversion:");
+		JLabel lblNewLabel = new JLabel("Select conversion type:");
 		lblNewLabel.setBounds(127, 57, 206, 30);
 		contentPane.add(lblNewLabel);
 		
 		JComboBox comboBox = new JComboBox(opcionesConvertidor);
+		comboBox.setModel(new DefaultComboBoxModel(new String[] {"Currency", "Temperature", "Time"}));
 		comboBox.setBounds(150, 100, 117, 22);
 		contentPane.add(comboBox);
 		
 		//Aqui se decide que objeto sera el que se inicialice al momento de generar el conversor
 		
-		JButton btnNewButton = new JButton("Siguiente");
+		JButton btnNewButton = new JButton("Next");
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				

@@ -13,7 +13,7 @@ public class Tiempo extends Conversor {
 	}
 
 	@Override
-	public double convertirValores(double valor, String tipo1, String tipo2) {		
+	public double convertirValores(double valor,String tipo1, String tipo2, int index1, int index2) {		
 		return 0;
 	}
 
