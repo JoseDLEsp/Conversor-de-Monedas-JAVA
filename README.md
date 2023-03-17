@@ -131,7 +131,10 @@ public double convertirValores(double C,String tipo1, String tipo2, int index1, 
  
  ![image](https://user-images.githubusercontent.com/121602508/225809491-20360b20-707b-446b-bab6-1280e45d4140.png)
 
- ##
+ ## Cómo correr el proyecto
+ 1. Clonar el proyecto en tu computadora.
+ 2. Instalar las dos librerías requeridas [org.JSON](https://mvnrepository.com/artifact/org.json/json) y [Apache Commons IO](https://commons.apache.org/proper/commons-io/).
+ 3. Ejecutar la clase Main desde el IDE de tu preferencia.
  
  
  
